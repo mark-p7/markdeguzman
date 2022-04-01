@@ -1,13 +1,19 @@
 // import logo from './logo.svg';
 import './App.css';
 import Heading from "./components/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from './pages/Homepage/Homepage';
+import React from "react";
 
 function App() {
   return (
     <>
-    
-    <Heading />
-    
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage/>} exact />
+          <Route path="/*" element={<Heading/>} exact />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
