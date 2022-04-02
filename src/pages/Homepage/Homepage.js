@@ -35,7 +35,7 @@ function getQuote(){
         document.getElementsByClassName('quote')[0].innerHTML = response.data[0].q
         document.getElementsByClassName('author')[0].innerHTML = response.data[0].a
     })
-    setTimeout(getQuote, 5000);
+    setTimeout(getQuote, 8000);
 }
 getQuote();
 
@@ -45,7 +45,7 @@ function Homepage() {
         <>
             <Heading background={true} />
             <ThemeProvider theme={theme}>
-                <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '90vh 100px 200px 300px', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
+                <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '95vh 100px 200px 300px', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
                     <div style={{ height: '100%', display: 'inline-flex' }}>
                         <div style={{margin: 'auto'}}>
                             <Typography variant="name">MARK DE GUZMAN</Typography>
