@@ -30,14 +30,12 @@ const theme = createTheme({
 
 function getQuote(){
     axios.get('/api/random').then(response => {
-        console.log(response.data[0].q)
-        console.log(response.data[0].a)
         document.getElementsByClassName('quote')[0].innerHTML = response.data[0].q
         document.getElementsByClassName('author')[0].innerHTML = response.data[0].a
     })
-    setTimeout(getQuote, 8000);
+    setTimeout(getQuote, 10000);
 }
-getQuote();
+getQuote()
 
 function Homepage() {
 
