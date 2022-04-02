@@ -2,6 +2,7 @@
   "name": "markdeguzman",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://zenquotes.io",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -23,7 +24,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://zenquotes.io/api",
   "eslintConfig": {
     "extends": [
       "react-app",
