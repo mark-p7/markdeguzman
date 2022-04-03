@@ -1,6 +1,7 @@
-import { createTheme, ThemeProvider, Typography, Box } from "@mui/material";
+import { createTheme, ThemeProvider, Typography, Box, List, ListItem } from "@mui/material";
 import Heading from "../../components/Navbar";
 import axios from "axios";
+import Aboutpage from "../Aboutpage/Aboutpage";
 
 const theme = createTheme({
     components: {
@@ -12,7 +13,7 @@ const theme = createTheme({
                     },
                     style: {
                         color: 'white',
-                        fontSize: '4em'
+                        fontSize: '6em'
                     }
                 },
                 {
@@ -21,6 +22,27 @@ const theme = createTheme({
                     },
                     style: {
                         color: 'white',
+                        fontSize: '2em',
+                        transition: 'opacity 1s'
+                    }
+                },
+                {
+                    props: {
+                        variant: 'title'
+                    },
+                    style: {
+                        color: 'white',
+                        fontSize: '3.2em',
+                        transition: 'opacity 1s'
+                    }
+                },
+                {
+                    props: {
+                        variant: 'info'
+                    },
+                    style: {
+                        color: 'white',
+                        fontSize: '2em',
                         transition: 'opacity 1s'
                     }
                 }
@@ -36,17 +58,17 @@ function setQuote() {
     author.innerHTML = responseTracker.data[0].a;
     quote.style.opacity = 1;
     author.style.opacity = 1;
-    setTimeout(getQuote, 4000);
+    setTimeout(getQuote, 5000);
 }
 var responseTracker = '';
-function getQuote(){
+function getQuote() {
     axios.get('/api/random').then(response => {
         var quote = document.getElementById('quote');
         var author = document.getElementById('author');
         responseTracker = response;
         quote.style.opacity = 0;
         author.style.opacity = 0;
-  
+
         setTimeout(setQuote, 1000);
     })
 }
@@ -58,9 +80,9 @@ function Homepage() {
         <>
             <Heading background={true} />
             <ThemeProvider theme={theme}>
-                <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '95vh 100px 200px 300px', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
+                <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '100vh 100vh 100vh 100vh', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
                     <div style={{ height: '100%', display: 'inline-flex' }}>
-                        <div style={{margin: 'auto'}}>
+                        <div style={{ margin: 'auto', marginTop: '15em' }}>
                             <Typography variant="name">MARK DE GUZMAN</Typography>
                             <br />
                             <Typography id="quote" className="quote" variant="quote"></Typography>
@@ -68,15 +90,13 @@ function Homepage() {
                             <Typography id="author" className="author" variant="quote"></Typography>
                         </div>
                     </div>
-                    <div style={{ height: '100%' }}>
+                    < Aboutpage/>
+                    {/* <div style={{ height: '100%' }}>
                         <Typography variant="quote">(Quote)</Typography>
                     </div>
                     <div style={{ height: '100%' }}>
                         <Typography variant="quote">(Quote)</Typography>
-                    </div>
-                    <div style={{ height: '100%' }}>
-                        <Typography variant="quote">(Quote)</Typography>
-                    </div>
+                    </div> */}
                 </Box>
             </ThemeProvider>
         </>
