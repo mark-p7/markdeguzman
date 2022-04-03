@@ -2,54 +2,7 @@ import { createTheme, ThemeProvider, Typography, Box, List, ListItem } from "@mu
 import Heading from "../../components/Navbar";
 import axios from "axios";
 import Aboutpage from "../Aboutpage/Aboutpage";
-
-const theme = createTheme({
-    components: {
-        MuiTypography: {
-            variants: [
-                {
-                    props: {
-                        variant: 'name'
-                    },
-                    style: {
-                        color: 'white',
-                        fontSize: '6em'
-                    }
-                },
-                {
-                    props: {
-                        variant: 'quote'
-                    },
-                    style: {
-                        color: 'white',
-                        fontSize: '2em',
-                        transition: 'opacity 1s'
-                    }
-                },
-                {
-                    props: {
-                        variant: 'title'
-                    },
-                    style: {
-                        color: 'white',
-                        fontSize: '3.2em',
-                        transition: 'opacity 1s'
-                    }
-                },
-                {
-                    props: {
-                        variant: 'info'
-                    },
-                    style: {
-                        color: 'white',
-                        fontSize: '2em',
-                        transition: 'opacity 1s'
-                    }
-                }
-            ]
-        }
-    }
-});
+import Theme from "../Theme";
 
 function setQuote() {
     var quote = document.getElementById('quote');
@@ -79,7 +32,7 @@ function Homepage() {
     return (
         <>
             <Heading background={true} />
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={Theme}>
                 <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '100vh 100vh 100vh 100vh', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
                     <div style={{ height: '100%', display: 'inline-flex' }}>
                         <div style={{ margin: 'auto', marginTop: '15em' }}>
