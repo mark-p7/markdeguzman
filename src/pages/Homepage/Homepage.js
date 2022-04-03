@@ -20,7 +20,8 @@ const theme = createTheme({
                         variant: 'quote'
                     },
                     style: {
-                        color: "white"
+                        color: 'white',
+                        transition: 'opacity 1s'
                     }
                 }
             ]
@@ -28,12 +29,26 @@ const theme = createTheme({
     }
 });
 
+function setQuote() {
+    var quote = document.getElementById('quote');
+    var author = document.getElementById('author');
+    quote.innerHTML = responseTracker.data[0].q;
+    author.innerHTML = responseTracker.data[0].a;
+    quote.style.opacity = 1;
+    author.style.opacity = 1;
+    setTimeout(getQuote, 4000);
+}
+var responseTracker = '';
 function getQuote(){
     axios.get('/api/random').then(response => {
-        document.getElementsByClassName('quote')[0].innerHTML = response.data[0].q
-        document.getElementsByClassName('author')[0].innerHTML = response.data[0].a
+        var quote = document.getElementById('quote');
+        var author = document.getElementById('author');
+        responseTracker = response;
+        quote.style.opacity = 0;
+        author.style.opacity = 0;
+  
+        setTimeout(setQuote, 1000);
     })
-    setTimeout(getQuote, 10000);
 }
 getQuote()
 
@@ -48,9 +63,9 @@ function Homepage() {
                         <div style={{margin: 'auto'}}>
                             <Typography variant="name">MARK DE GUZMAN</Typography>
                             <br />
-                            <Typography className="quote" variant="quote"></Typography>
+                            <Typography id="quote" className="quote" variant="quote"></Typography>
                             <br />
-                            <Typography className="author" variant="quote"></Typography>
+                            <Typography id="author" className="author" variant="quote"></Typography>
                         </div>
                     </div>
                     <div style={{ height: '100%' }}>
