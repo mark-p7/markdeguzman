@@ -1,5 +1,7 @@
-import { Button, Box } from "@mui/material";
-import React, { useEffect, useRef } from "react";
+import { Typography, Button, Box, ThemeProvider } from "@mui/material";
+import React, { useRef } from "react";
+import Theme from "../pages/Theme";
+import {Link} from 'react-scroll'
 // import Styled from "styled-components"; 
 
 /** TO-DO List:
@@ -9,8 +11,15 @@ import React, { useEffect, useRef } from "react";
 
 function HeaderButton(prop) {
     return (
-        <Button sx={{ paddingLeft: '20px', paddingRight: '20px', color: '#FFFFFF' }} variant="text">
-            {prop.text}
+        <Button sx={{ paddingLeft: '20px', paddingRight: '20px' }} variant="text">
+            
+            <ThemeProvider theme={Theme}>
+                <Link to={prop.target} spy={true} smooth={true}>
+                <Typography variant="menuItems">
+                {prop.text}
+            </Typography>
+                </Link>
+            </ThemeProvider>
         </Button>
     )
 }
@@ -24,12 +33,12 @@ function Heading(prop) {
 
     return (
         <>
-            <Box sx={{ textAlign: 'center', padding: '1vh 0 1vh 0', backgroundColor: {background}}}>
+            <Box id="head" sx={{ textAlign: 'center', padding: '1vh 0 1vh 0', backgroundColor: { background } }}>
                 <div>
-                    <HeaderButton text=" Home "/>
-                    <HeaderButton text=" About " />
-                    <HeaderButton text=" Resume " />
-                    <HeaderButton text=" Contact " />
+                    <HeaderButton text=" Home " target="head"/>
+                    <HeaderButton text=" About " target="about-component"/>
+                    <HeaderButton text=" Resume " target="resume"/>
+                    <HeaderButton text=" Contact " target="about-component"/>
                 </div>
             </Box>
         </>

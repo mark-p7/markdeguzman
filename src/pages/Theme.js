@@ -29,7 +29,8 @@ const Theme = createTheme({
                     style: {
                         color: 'white',
                         fontSize: '3.2em',
-                        transition: 'opacity 1s'
+                        transition: 'opacity 1s',
+                        fontWeight: 'bold'
                     }
                 },
                 {
@@ -38,8 +39,17 @@ const Theme = createTheme({
                     },
                     style: {
                         color: 'white',
-                        fontSize: '2em',
+                        fontSize: '1.5em',
                         transition: 'opacity 1s'
+                    }
+                },
+                {
+                    props: {
+                        variant: 'menuItems'
+                    },
+                    style: {
+                        color: 'white',
+                        fontSize: '1.25em'
                     }
                 }
             ]
