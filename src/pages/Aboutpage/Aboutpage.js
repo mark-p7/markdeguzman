@@ -115,24 +115,6 @@ export default function Aboutpage() {
                         </Typography>
                     </Fade>
                 </div>
-                <div id="resume" style={{ gridArea: '3 / 1 / span 1 / span 1', textAlign: 'left', paddingTop: '5vh' }}>
-                    <Fade left>
-                        <Typography variant="name">Resume</Typography>
-                    </Fade>
-                </div>
-                <div style={{ marginTop: '5vh' }}>
-                <Fade right>
-                    <Button variant="outlined" style={{ textTransform: 'none', width: '15em' }}>
-                        <Typography id="quote" className="quote" variant="quote">ZIP file</Typography>
-                    </Button>
-                </Fade>
-                <Fade bottom>
-                <Button variant="outlined" style={{ textTransform: 'none', width: '15em', marginTop: '2em' }}>
-                        <Typography id="quote" className="quote" variant="quote">PDF file</Typography>
-                    </Button>
-                </Fade>
-
-                </div>
             </Box>
         </div>
     )

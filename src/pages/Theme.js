@@ -14,6 +14,15 @@ const Theme = createTheme({
                 },
                 {
                     props: {
+                        variant: 'subTitle'
+                    },
+                    style: {
+                        color: 'white',
+                        fontSize: '2em'
+                    }
+                },
+                {
+                    props: {
                         variant: 'quote'
                     },
                     style: {
