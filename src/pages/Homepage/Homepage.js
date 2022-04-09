@@ -5,6 +5,7 @@ import axios from "axios";
 import Aboutpage from "../Aboutpage/Aboutpage";
 import Theme from "../Theme";
 import Resumepage from "../Resumepage/Resumepage";
+import Contactpage from "../Contactpage/Contactpage";
 
 function setQuote() {
     var quote = document.getElementById('quote');
@@ -34,7 +35,7 @@ function Homepage() {
         <>
             <Heading background={true} />
             <ThemeProvider theme={Theme}>
-                <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '110vh auto 60vh 100vh 100vh', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
+                <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '110vh auto auto auto 100vh', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
                     <div style={{ height: '100%', display: 'inline-flex' }}>
                         <div style={{ margin: 'auto', marginTop: '15em' }}>
                             <Typography variant="name">MARK DE GUZMAN</Typography>
@@ -44,18 +45,16 @@ function Homepage() {
                             <Typography id="author" className="author" variant="quote"></Typography>
                         </div>
                     </div>
+
                     < Aboutpage />
-                    <div id='resume' style={{ width: '80%', display: 'grid', alignItems: 'center', margin: 'auto' }}>
-                        <Resumepage />
+
+                    <div id='resume' style={{ width: '80%', paddingTop: '15vh' }}>
+                        <div style={{ display: 'grid', alignItems: 'center', margin: 'auto' }}>
+                            <Resumepage />
+                        </div>
                     </div>
 
-                    <div id="Contact">
-                        <FormControl>
-                            <InputLabel htmlFor="my-input">Email address</InputLabel>
-                            <Input id="my-input" aria-describedby="my-helper-text" />
-                            <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
-                        </FormControl>
-                    </div>
+                    <Contactpage />
                 </Box>
             </ThemeProvider>
         </>
