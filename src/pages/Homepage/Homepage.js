@@ -18,7 +18,7 @@ function setQuote() {
 }
 var responseTracker = '';
 function getQuote() {
-    axios.get('/api/random').then(response => {
+    axios.get('https://zenquotes.io/api/random').then(response => {
         var quote = document.getElementById('quote');
         var author = document.getElementById('author');
         responseTracker = response;
