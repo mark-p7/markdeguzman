@@ -18,7 +18,7 @@ function setQuote() {
 }
 var responseTracker = '';
 function getQuote() {
-    axios.get('/api/random').then(response => {
+    axios.get('https://zenquotes.io/api/random').then(response => {
         var quote = document.getElementById('quote');
         var author = document.getElementById('author');
         responseTracker = response;
@@ -35,7 +35,7 @@ function Homepage() {
         <>
             <Heading background={true} />
             <ThemeProvider theme={Theme}>
-                <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '110vh auto auto auto 100vh', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
+                <Box sx={{ display: 'grid', width: '100%', textAlign: 'center', gridTemplateRows: '110vh auto auto auto', height: '100%', justifyItems: 'center', alignItems: 'center' }}>
                     <div style={{ height: '100%', display: 'inline-flex' }}>
                         <div style={{ margin: 'auto', marginTop: '15em' }}>
                             <Typography variant="name">MARK DE GUZMAN</Typography>
