@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 
 export default function Aboutpage() {
     return (
-        <div id="about-component" style={{ height: '100%', paddingTop: '13.5vh', paddingBottom: '15vh' }}>
+        <div id="about-component" style={{ height: '100%', paddingTop: '13.5vh', paddingBottom: '2vh' }}>
             <Box sx={{ display: 'grid', gridTemplateColumns: '45vw 20vw', gridTemplateRows: 'auto auto auto', width: '100%', gap: '1em 2em' }}>
                 <div style={{ textAlign: 'left' }}>
                     <Fade left>

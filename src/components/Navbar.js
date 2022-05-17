@@ -37,8 +37,8 @@ function Heading(prop) {
                 <div>
                     <HeaderButton text=" Home " target="head"/>
                     <HeaderButton text=" About " target="about-component"/>
-                    <HeaderButton text=" Resume " target="resume"/>
-                    <HeaderButton text=" Contact " target="contact"/>
+                    {/* <HeaderButton text=" Resume " target="resume"/>
+                    <HeaderButton text=" Contact " target="contact"/> */}
                 </div>
             </Box>
         </>

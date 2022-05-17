@@ -18,7 +18,7 @@ function setQuote() {
 }
 var responseTracker = '';
 function getQuote() {
-    axios.get('https://zenquotes.io/api/random').then(response => {
+    axios.get('/api/random').then(response => {
         var quote = document.getElementById('quote');
         var author = document.getElementById('author');
         responseTracker = response;
@@ -48,13 +48,13 @@ function Homepage() {
 
                     < Aboutpage />
 
-                    <div id='resume' style={{ width: '80%', paddingTop: '15vh' }}>
+                    {/* <div id='resume' style={{ width: '80%', paddingTop: '15vh' }}>
                         <div style={{ display: 'grid', alignItems: 'center', margin: 'auto' }}>
                             <Resumepage />
                         </div>
                     </div>
 
-                    <Contactpage />
+                    <Contactpage /> */}
                 </Box>
             </ThemeProvider>
         </>
