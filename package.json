@@ -2,7 +2,6 @@
   "name": "markdeguzman",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://zenquotes.io",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
