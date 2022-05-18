@@ -40,9 +40,9 @@ function Homepage() {
                         <div style={{ margin: 'auto', marginTop: '15em' }}>
                             <Typography variant="name">MARK DE GUZMAN</Typography>
                             <br />
-                            <Typography id="quote" className="quote" variant="quote"></Typography>
+                            {/* <Typography id="quote" className="quote" variant="quote"></Typography> */}
                             <br />
-                            <Typography id="author" className="author" variant="quote"></Typography>
+                            {/* <Typography id="author" className="author" variant="quote"></Typography> */}
                         </div>
                     </div>
 
